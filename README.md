@@ -935,7 +935,7 @@ Parent Component
 
 ✅ Use Case: Keep form inputs, scroll positions, and API-fetched data intact when navigating between views.
 
-##🧱 Basic Syntax
+## 🧱 Basic Syntax
 
 ```js
 <template>
@@ -955,7 +955,7 @@ export default {
 </script>
 
 ```
-###✅ Using with Vue Router
+## ✅ Using with Vue Router
 You can use <keep-alive> to cache routed views in a Single Page Application (SPA):
 ```js
 <template>
@@ -969,7 +969,7 @@ You can use <keep-alive> to cache routed views in a Single Page Application (SPA
 </template>
 
 ```
-###📌 Important: 
+## 📌 Important: 
 This caches components based on name. So, you must define name in your Vue components:
 ```js
 export default {
@@ -977,7 +977,7 @@ export default {
 }
 
 ```
-###🎛 With include and exclude
+## 🎛 With include and exclude
 To control which components should be cached:
 ```js
 <keep-alive include="Home,About">
@@ -985,7 +985,7 @@ To control which components should be cached:
 </keep-alive>
 
 ```
-###Props
+## Props
 
 | Prop      | Description                             |
 | --------- | --------------------------------------- |
