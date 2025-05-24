@@ -1016,7 +1016,7 @@ This ensures that the server won’t close idle connections unexpectedly.
 ## 👤 Author
 
 Created by *Zin Min Aung** – Nay Pyi Taw, Myanmar  
-GitHub: [@mmcodetester](https://github.com/mmcodetester)
+GitHub: [@mmcodetester](https://github.com/zxinminaung-dev)
 
 ---
 
