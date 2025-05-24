@@ -931,9 +931,69 @@ Parent Component
 
 
 ## Keep Alive
-<code>KeepAlive</code>
+<code>KeepAlive</code> wraps dynamic components and caches inactive components in memory.
 
-## 🔁 Keep-Alive Support in Express.js
+✅ Use Case: Keep form inputs, scroll positions, and API-fetched data intact when navigating between views.
+
+##🧱 Basic Syntax
+
+```js
+<template>
+  <keep-alive>
+    <component :is="activeComponent"></component>
+  </keep-alive>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      activeComponent: 'MyComponentA'
+    }
+  }
+}
+</script>
+
+```
+###✅ Using with Vue Router
+You can use <keep-alive> to cache routed views in a Single Page Application (SPA):
+```js
+<template>
+  <v-app>
+    <keep-alive>
+      <router-view v-slot="{ Component }">
+        <component :is="Component" />
+      </router-view>
+    </keep-alive>
+  </v-app>
+</template>
+
+```
+###📌 Important: 
+This caches components based on name. So, you must define name in your Vue components:
+```js
+export default {
+  name: 'AboutPage'
+}
+
+```
+###🎛 With include and exclude
+To control which components should be cached:
+```js
+<keep-alive include="Home,About">
+  <router-view />
+</keep-alive>
+
+```
+###Props
+
+| Prop      | Description                             |
+| --------- | --------------------------------------- |
+| `include` | Comma-separated names or regex to cache |
+| `exclude` | Names/regex to exclude from caching     |
+| `max`     | Max number of components to cache       |
+
+## 🔁 Keep-Alive also Support in Express.js
 
 To prevent your Express.js server from timing out during long operations or inactivity (especially useful during development), you can enable keep-alive at the server level like this:
 
